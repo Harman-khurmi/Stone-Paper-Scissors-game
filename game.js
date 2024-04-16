@@ -26,40 +26,40 @@ let restartgame = restart.addEventListener("click", () => {
 for (let i = 0; i < 3; i++) {
     choose[i].addEventListener("click", () => {
         let userchoice = choose[i].getAttribute("id");
-        console.log("button was clicked", userchoice);
+        //console.log("button was clicked", userchoice);
         playgame(userchoice);
     });
 }
 let wincheck = (userwin, user, comp) => {
     //userwin === 1 ? console.log("you won") : console.log("you lost");
     if (userwin === 1 && user !== comp) {
-        console.log("you won");
+        //console.log("you won");
         usercount++;
         userscore.innerText = usercount;
         showmsg.innerText = `You Won! ${user} beats ${comp}`;
-        console.log(user, comp);
+        //console.log(user, comp);
         showmsg.style.backgroundColor = "green";
     }
     else {
-        console.log("you lost");
+        //console.log("you lost");
         compscount++;
         compscore.innerText = compscount;
         showmsg.innerText = `You Lost! ${comp} beats ${user}`;
-        console.log(user, comp);
+        //console.log(user, comp);
         showmsg.style.backgroundColor = "red";
 
     }
 };
 
 let drawgame = () => {
-    console.log("its a draw");
+    //console.log("its a draw");
     showmsg.innerText = `It is a draw`;
     showmsg.style.backgroundColor = "#B8B42D";
 }
 
 let playgame = (userchoice) => {
     let compchoice = compchoicerand();
-    console.log(`comp choice ${compchoice}`);
+    //console.log(`comp choice ${compchoice}`);
     if (userchoice === compchoice) {
         drawgame();
     }
